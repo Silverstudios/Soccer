@@ -35,8 +35,12 @@ This Python script scrapes Premier League match and shooting statistics from the
    ```bash
    pip install -r requirements.txt
 
----
+## Running Scraper
 
+   python scraper.py
+
+
+---
 
 ## How It Works
 
