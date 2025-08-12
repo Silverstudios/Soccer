@@ -1,77 +1,71 @@
-Premier League Stats Scraper
-This Python script scrapes Premier League match and shooting statistics from the FBref website for the 2024-2025 season. The data is then saved into a CSV file for further analysis.
+# Premier League Stats Scraper
 
-Requirements
-Python 3.x
+This Python script scrapes Premier League match and shooting statistics from the FBref website for the 2024-2025 season. The collected data is saved as a CSV file for further analysis.
 
-Selenium
+---
 
-BeautifulSoup
+## Features
 
-pandas
+- Scrapes match stats and shooting stats for all Premier League teams.
+- Combines match and shooting data based on date, competition, and round.
+- Saves the cleaned dataset into a CSV file for easy use in analysis or modeling.
 
-webdriver-manager
+---
 
-You can install the required dependencies using the following:
+## Requirements
 
-bash
-Copy
-Edit
-pip install selenium beautifulsoup4 pandas webdriver-manager
-How to Use
-Clone this repository (or save the script to your local machine).
+- Python 3.x
+- Google Chrome browser installed (required by ChromeDriver)
+- Python packages:
+  - selenium
+  - beautifulsoup4
+  - pandas
+  - webdriver-manager
+  - lxml
+  - html5lib
 
-Install the required dependencies by running:
+---
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Make sure you have Google Chrome installed on your machine, as the script uses ChromeDriver.
+## Installation
 
-Run the script:
+1. Clone this repository or download the script to your local machine.
 
-bash
-Copy
-Edit
-python premier_league_scraper.py
-The script will scrape match and shooting stats for all Premier League teams in the 2024-2025 season.
+2. Install the required Python dependencies with:
 
-After completion, a CSV file named premier_league_2024_2025_team_stats.csv will be saved in your working directory.
+   ```bash
+   pip install -r requirements.txt
 
-Code Overview
-scrape_premier_league_stats()
-This function performs the following steps:
+---
+
+
+## How It Works
+
+The core function scrape_premier_league_stats() performs the following:
 
 Navigates to the Premier League stats page on FBref.
 
-Extracts the team URLs from the table containing the team links.
+Extracts all team URLs from the main table.
 
-For each team, it:
+## For each team:
 
-Scrapes the team’s match stats.
+Scrapes match stats.
 
-Scrapes the team's shooting stats.
+Scrapes shooting stats.
 
-Merges both datasets on the date, competition, and round columns.
+Merges both datasets on Date, Comp, and Round.
 
-Adds season and team name information.
+Adds Season and Team information.
 
-The final data is saved into a CSV file.
+Combines all team data into a single DataFrame.
 
-Dependencies:
-Selenium is used for web scraping dynamic content (i.e., pages rendered by JavaScript).
+Saves the combined data as a CSV file.
 
-BeautifulSoup is used for parsing the HTML content.
+---
 
-Pandas is used for handling and saving the data into a CSV file.
 
-webdriver-manager automatically handles ChromeDriver installation.
+## Notes
+Ensure a stable internet connection during scraping.
 
-Notes
-Make sure to have a stable internet connection as the script fetches data from external sources.
+The script relies on the FBref page structure — if the website changes, the scraper may need updating.
 
-If you encounter any errors due to webpage structure changes, please check if FBref has updated the page structure.
-
-License
-This script is open-source and available under the MIT License. Feel free to fork or modify it!
+ChromeDriver is automatically managed by webdriver-manager.
