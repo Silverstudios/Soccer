@@ -1,0 +1,6 @@
+selenium
+webdriver-manager
+pandas
+lxml
+html5lib
+beautifulsoup4
